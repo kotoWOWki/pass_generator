@@ -1,6 +1,5 @@
 import secrets
 
-password = ""
 chars = []
 
 LOWERCASE = "abcdefghijklmnopqrstuvwxyz"
@@ -27,11 +26,11 @@ guaranteed = [
     secrets.choice(SYMBOLS),
 ]        
         
-rest = []
+chars = []
 for i in range(length - 4):
-    rest.append(secrets.choice(alphabet))
+    chars.append(secrets.choice(alphabet))
     
-chars = guaranteed + rest    
+chars = guaranteed + chars
     
 rng = secrets.SystemRandom()
 rng.shuffle(chars)    
