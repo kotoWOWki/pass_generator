@@ -11,16 +11,16 @@ alphabet = LOWERCASE + UPPERCASE + DIGITS + SYMBOLS
 
 while True:
     try:
-        raw = input("Введите количество символов из которого должен состоять пароль (Выйти — 'x'): ")
+        raw = input("\nВведите количество символов из которого должен состоять пароль (Выйти — 'x'): ")
         if raw.lower() == "x":
             print("Благодарю за использование!")
             break
         length = int(raw)    
         if length < 8:
-            print("Длина должна быть не меньше 8!")
+            print("\nДлина должна быть не меньше 8!\n")
             continue
         elif length >=129:
-            print("Длина не должна превышать 128 символов!")
+            print("\nДлина не должна превышать 128 символов!\n")
             continue
         guaranteed = [
             secrets.choice(LOWERCASE),
@@ -37,4 +37,4 @@ while True:
         password = "".join(chars)              
         print(f"\nВаш пароль: {password} состоящий из {length} символов\n")    
     except ValueError:
-        print("Введите число!")
+        print("\nВведите число!\n")
